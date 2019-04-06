@@ -72,6 +72,7 @@ function dragElement(elmnt) {
 
     // otherwise, move the DIV from anywhere inside the DIV: 
     elmnt.onmousedown = dragMouseDown;
+    elmnt.ontouchstart = dragMouseDown;
 
 
     function dragMouseDown(e) {
@@ -82,9 +83,12 @@ function dragElement(elmnt) {
         pos3 = e.clientX;
         pos4 = e.clientY;
         dragging = true;
+
         document.onmouseup = closeDragElement;
+        document.ontouchend = closeDragElement;
         // call a function whenever the cursor moves:
         document.onmousemove = elementDrag;
+        document.ontouchmove = elementDragTouch;
     }
 
     function elementDrag(e) {
@@ -105,19 +109,35 @@ function dragElement(elmnt) {
         angle *= 180 / Math.PI;
         angle += 90;
 
-
-        //    console.log("diffx: " + diffX);  
-        //    console.log("diffy: " + diffY);
-        //console.log("angle: " + angle);
         if (angle >= INIT && angle <= 40) {
             armAngle = angle;
         }
         if (armAngle > 3 && armAngle < 8) {
             armAngle = 5.0001;
         }
-        // set the element's new position:
-        //    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-        //    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+        
+    function elementDragTouch(e) {
+        e.preventDefault();
+        
+        var touch = e.touches[0];
+        var mouseX = touch.pageX;
+        var mouseY = touch.pageY;
+
+        var diffX = armX - mouseX;
+        var diffY = armY - mouseY;
+
+        var angle = Math.atan2(diffY, diffX);
+
+        angle *= 180 / Math.PI;
+        angle += 90;
+
+        if (angle >= INIT && angle <= 40) {
+            armAngle = angle;
+        }
+        if (armAngle > 3 && armAngle < 8) {
+            armAngle = 5.0001;
+        }
     }
 
     function closeDragElement() {
