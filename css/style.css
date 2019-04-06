@@ -134,8 +134,8 @@ table {
 }
 img.button-spin {
     position: absolute;
-    width: 46px !important;
-    height: 38px;
+    width: 8% !important;
+    height: 7%;
     top: 66%;
     left: 19%;
     transition: .25s all;
