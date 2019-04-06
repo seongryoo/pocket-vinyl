@@ -29,8 +29,17 @@ function flipIt() {
 function spinIt() {
     var record = document.getElementById('record');
     
+    var button = document.getElementById('spinButton');
+    
     record.classList.toggle('paused');
     spinning = !spinning;
+    
+    if (spinning) {
+        button.style.transform = "rotate(90deg)";
+    } else {
+        button.style.transform = "rotate(0deg)";
+        
+    }
 }
 
 function flipCheck() {
