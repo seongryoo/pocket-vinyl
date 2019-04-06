@@ -1,4 +1,4 @@
-var song = new sound("sound/longsong.wav");
+var song = new sound("sound/longsong.mp3");
 var duration;
 var currentTime;
 
