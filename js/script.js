@@ -45,7 +45,7 @@ function flipCheck() {
     } else {
         button.style.pointerEvents = "auto";
         arm.style.pointerEvents = "auto";
-        record.style.pointerEvents = "auto";
+        record.style.pointerEvents = "none";
     }
 }
 

@@ -32,6 +32,7 @@ function updateArm() {
     if (playing) {
         song.updateTime();
         armAngle = (currentTime / duration) * 35 + 5;
+        realArm.style.marginTop = -Math.random() * 2 + "px";
         if (dragging || !spinning || armAngle >= 40) {
             playing = false;
             song.stop();
