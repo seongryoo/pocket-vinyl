@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Coustard');
 @import url('https://fonts.googleapis.com/css?family=Goudy+Bookletter+1911');
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
 #flip-content img {
     pointer-events: none;
 }
@@ -109,6 +110,10 @@ table {
     position: absolute;
     z-index: -1;
 }
+span {
+    color: white !important;
+    opacity: 1 !important;
+}
 .button-flip {
     background: gray;
     color: white;
@@ -214,4 +219,24 @@ img.button-spin:hover {
     -moz-animation-play-state: paused;
     -o-animation-play-state: paused;
     animation-play-state: paused;
+}
+
+
+.plug {
+    font-family: 'Varela Round', sans-serif;
+    font-size: 16px;
+    color: #929d94;
+    position: absolute;
+    text-align: center;
+    text-decoration: none;
+    left:0;
+    right:0;
+    bottom: 10px;
+    margin: 0 auto;
+    width: 50%;
+    padding: 10px;
+    transition: .5s all;
+}
+.plug:hover {
+    opacity: .5;
 }
