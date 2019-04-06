@@ -1,2 +1,2 @@
-# pocket-vinyl
-A tiny vinyl to satisfy your antiquarian musical needs.
+# Pocket Vinyl
+A tiny turntable to satisfy your miniature musical needs.
